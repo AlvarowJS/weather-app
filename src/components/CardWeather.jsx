@@ -18,9 +18,10 @@ const CardWeather = ({ weather }) => {
                 <p className='app__country'>{`${weather?.name}, ${weather?.sys.country}`} </p>                           
             <img className='app__img' src={weather && `http://openweathermap.org/img/wn/${getWheater}@4x.png`} alt="icon wheater condition" />
             <div className='app__core'>
+            <p className='app__core-description'>{`${weather?.weather[0].description}`}</p>
                 <p className='app__core-grade'>{grade ? celsio + ' °C' : fahrenheit + ' °F'}</p>
                 <button className='app__core-button' onClick={switchGrade}> Cambiar a {grade ? '°F' : '°C'}</button>
-                <p className='app__core-description'>{`${weather?.weather[0].description}`}</p>
+                
 
             </div>
 
